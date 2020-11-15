@@ -15,7 +15,20 @@ public class Minimarket {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+         System.out.println("Builder Pattern ");
+        Pembuatmakanan pembuatmakanan = new Pembuatmakanan();
+
+      Meal vegMeal = pembuatmakanan.prepareVegMeal();
+      System.out.println("Veg Meal");
+      vegMeal.showItems();
+      System.out.println("Total Cost: " + vegMeal.getCost());
+
+      Meal nonVegMeal = pembuatmakanan.prepareNonVegMeal();
+      System.out.println("\n\nNon-Veg Meal");
+      nonVegMeal.showItems();
+      System.out.println("Total Cost: " + nonVegMeal.getCost());
+      
+    
     }
     
 }
