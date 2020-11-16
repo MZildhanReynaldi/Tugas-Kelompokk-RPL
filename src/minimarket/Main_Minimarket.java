@@ -56,11 +56,6 @@ public class Main_Minimarket {
         TokoBaris.getBaris("Minuman").isibaris();
         TokoBaris.getBaris("Makanan").isibaris();
     
-      System.out.println("\n\nPrototype Pattern ");
-      TokoBaris.getBaris("Makanan").isibaris();
-        TokoBaris.getBaris("Minuman").isibaris();
-        TokoBaris.getBaris("Minuman").isibaris();
-        TokoBaris.getBaris("Makanan").isibaris();
         }
         
         if(pilihan == 'C'){
@@ -127,8 +122,6 @@ public class Main_Minimarket {
         new Thread(getNescafe).start();
         new Thread(getOnigiri).start();
     }
-        else{
-            System.out.println("Menu tidak ditemukan");
-        }
+       
     }
 }
