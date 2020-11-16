@@ -9,14 +9,35 @@ package minimarket;
  *
  * @author User
  */
-public class Minimarket {
+import java.util.Scanner;
 
+public class Minimarket {
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Builder Pattern ");
+        
         Pembuatmakanan pembuatmakanan = new Pembuatmakanan();
+        Karyawan BOS = new Karyawan("Dimas","Bos",100000000);
+        Stockbarang stockBarang = new Stockbarang();
+        
+        char pilihan;
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("==============MENU DESIGN PATTERN============== ");
+        System.out.println("A. Builder Pattern ");
+        System.out.println("B. Prototype Pattern ");
+        System.out.println("C. Composite Pattern ");
+        System.out.println("D. Observer Pattern ");
+        
+        System.out.println("Pilih Menu : ");
+        pilihan = input.next().charAt(0);
+        
+        
+        
+        if(pilihan == 'A'){
+        System.out.println("\n\nBuilder Pattern ");
 
       Meal vegMeal = pembuatmakanan.prepareVegMeal();
       System.out.println("Veg Meal");
@@ -27,9 +48,10 @@ public class Minimarket {
       System.out.println("\n\nNon-Veg Meal");
       nonVegMeal.showItems();
       System.out.println("Total Cost: " + nonVegMeal.getCost());
-      
+        }
+        if(pilihan == 'B'){
         System.out.println("\n\nPrototype Pattern ");
-      TokoBaris.getBaris("Makanan").isibaris();
+        TokoBaris.getBaris("Makanan").isibaris();
         TokoBaris.getBaris("Minuman").isibaris();
         TokoBaris.getBaris("Minuman").isibaris();
         TokoBaris.getBaris("Makanan").isibaris();
@@ -39,11 +61,11 @@ public class Minimarket {
         TokoBaris.getBaris("Minuman").isibaris();
         TokoBaris.getBaris("Minuman").isibaris();
         TokoBaris.getBaris("Makanan").isibaris();
+        }
         
-        
-         System.out.println("\n\nComposite Pattern ");
-         Karyawan BOS = new Karyawan("Dimas","Bos",100000000);
-        
+        if(pilihan == 'C'){
+        System.out.println("\n\nComposite Pattern ");
+         
         Karyawan headPenjualan = new Karyawan("Zildhan", "Kepala Penjualan",5000000);
         
         Karyawan headPemasaran = new Karyawan("Galih","Kepala Pemasaran",5000000);
@@ -74,5 +96,39 @@ public class Minimarket {
     }
     
 }
+        }
+        
+        if(pilihan == 'D'){
+        System.out.println("\n\nObserver Pattern ");
+        
+        Stockobserver observer1 = new Stockobserver(stockBarang);
+        
+        stockBarang.setTehpucukPrice(5000.00);
+        stockBarang.setNescafePrice(8500.60);
+        stockBarang.setOnigiriPrice(10000.40);
+        
+        Stockobserver observer2 = new Stockobserver(stockBarang);
+        
+        stockBarang.setTehpucukPrice(5000.00);
+        stockBarang.setNescafePrice(8500.60);
+        stockBarang.setOnigiriPrice(10000.40);
+        
+        stockBarang.unregister(observer1);
+        
+        stockBarang.setTehpucukPrice(5000.00);
+        stockBarang.setNescafePrice(8500.60);
+        stockBarang.setOnigiriPrice(10000.40);
+        
+        Runnable getTehpucuk = new Ambilstock(stockBarang, 2, "Tehpucuk", 5000.00);
+        Runnable getNescafe = new Ambilstock(stockBarang, 2, "Nescafe", 8500.60);
+        Runnable getOnigiri = new Ambilstock(stockBarang, 2, "Onigiri", 10000.40);
+        
+        new Thread(getTehpucuk).start();
+        new Thread(getNescafe).start();
+        new Thread(getOnigiri).start();
+    }
+        else{
+            System.out.println("Menu tidak ditemukan");
+        }
     }
 }
