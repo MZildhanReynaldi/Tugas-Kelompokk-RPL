@@ -15,7 +15,7 @@ public class Minimarket {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         System.out.println("Builder Pattern ");
+        System.out.println("Builder Pattern ");
         Pembuatmakanan pembuatmakanan = new Pembuatmakanan();
 
       Meal vegMeal = pembuatmakanan.prepareVegMeal();
@@ -29,6 +29,11 @@ public class Minimarket {
       System.out.println("Total Cost: " + nonVegMeal.getCost());
       
     
+      System.out.println("\n\nPrototype Pattern ");
+      TokoBaris.getBaris("Makanan").isibaris();
+        TokoBaris.getBaris("Minuman").isibaris();
+        TokoBaris.getBaris("Minuman").isibaris();
+        TokoBaris.getBaris("Makanan").isibaris();
     }
     
 }
