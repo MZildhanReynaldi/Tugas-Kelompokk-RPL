@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package minimarket;
+package builder;
 
-public interface Packing {
-   public String pack();
+public interface Item {
+   public String nama();
+   public Packing packing();
+   public float harga();	
 }
