@@ -3,11 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package minimarket;
-public class Botol implements Packing {
+package builder;
+public class Jusbuah extends Minuman {
 
    @Override
-   public String pack() {
-      return "Botol";
+   public float harga() {
+      return 30.0f;
    }
+ 
+   @Override
+   public String nama() {
+      return "Juasbuah";
+   }
+
+
+
 }
