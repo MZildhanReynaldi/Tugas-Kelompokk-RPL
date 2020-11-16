@@ -11,7 +11,7 @@ package minimarket;
  */
 import java.util.Scanner;
 
-public class Minimarket {
+public class Main_Minimarket {
     
     /**
      * @param args the command line arguments
