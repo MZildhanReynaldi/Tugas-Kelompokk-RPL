@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builder;
-public class Botol implements Packing {
+package minimarket;
+public abstract class Minuman implements Item {
 
-   @Override
-   public String pack() {
-      return "Botol";
-   }
+	public Packing packing() {
+       return new Botol();
+	}
+
+	public abstract float harga();
 }

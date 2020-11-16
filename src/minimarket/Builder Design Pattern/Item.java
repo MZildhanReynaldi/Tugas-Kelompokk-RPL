@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builder;
-public abstract class Kebab implements Item {
+package minimarket;
 
-   public Packing packing() {
-      return new Pembungkus ();
-   }
-
-   public abstract float harga();
+/**
+ *
+ * @author User
+ */
+public interface Item{
+   public String nama();
+   public Packing packing();
+   public float harga();	
 }

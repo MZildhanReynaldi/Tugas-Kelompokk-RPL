@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builder;
+package minimarket;
 
-public interface Packing {
-   public String pack();
+public class Pembungkus implements Packing {
+
+   @Override
+   public String pack() {
+      return "Pembungkus";
+   }
 }
