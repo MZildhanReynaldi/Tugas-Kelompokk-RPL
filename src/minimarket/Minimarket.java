@@ -28,6 +28,11 @@ public class Minimarket {
       nonVegMeal.showItems();
       System.out.println("Total Cost: " + nonVegMeal.getCost());
       
+        System.out.println("\n\nPrototype Pattern ");
+      TokoBaris.getBaris("Makanan").isibaris();
+        TokoBaris.getBaris("Minuman").isibaris();
+        TokoBaris.getBaris("Minuman").isibaris();
+        TokoBaris.getBaris("Makanan").isibaris();
     
       System.out.println("\n\nPrototype Pattern ");
       TokoBaris.getBaris("Makanan").isibaris();
